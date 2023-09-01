@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\MqttAgent.csproj": {}
+    "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\MqttAgent.csproj": {
+    "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
+        "projectUniqueName": "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
         "projectName": "MqttAgent",
-        "projectPath": "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
+        "projectPath": "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
         "packagesPath": "C:\\Users\\Егор Орленок\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\obj\\",
+        "outputPath": "E:\\VisualStudio\\MqttAgent\\MqttAgent\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Егор Орленок\\AppData\\Roaming\\NuGet\\NuGet.Config",

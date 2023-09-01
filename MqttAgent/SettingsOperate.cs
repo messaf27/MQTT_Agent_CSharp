@@ -16,7 +16,17 @@ namespace MqttAgent
         public SettingsOperate()
         {
             settingFolderPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.ApplicationData), settingsFolderName);
-            Debug.WriteLine(settingFolderPath);
+            Debug.WriteLine("Folder for settings: " + settingFolderPath);
+
+        }
+
+        public void setServerAddr(string addr)
+        {
+
+        }
+
+        public void setServerPort(int port)
+        {
 
         }
     }

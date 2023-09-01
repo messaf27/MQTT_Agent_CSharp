@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sbH4JjPmDH3LjpEeoQowUZefgAqo0eK8Pujf1w40mV5N9DMeXiXjMlSlc+yUu7en/LMvnnxlG6urRRXImQe1ww==",
+  "dgSpecHash": "tQ16UDeHOMNzM1vXgzmxrDlbqkOKEtO9dsdPeza2dlyQo9aorXz78g9Sn+XnM8r2kwMYjikYw3GBe0JMfU4AWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Егор Орленок\\source\\repos\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
+  "projectFilePath": "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
