@@ -1,0 +1,17 @@
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.exe
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.deps.json
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.runtimeconfig.json
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.dll
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.pdb
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.AssemblyReference.cache
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.GenerateResource.cache
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.AssemblyInfoInputs.cache
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.AssemblyInfo.cs
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.CoreCompileInputs.cache
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.dll
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\refint\MqttAgent.dll
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.pdb
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.genruntimeconfig.cache
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\ref\MqttAgent.dll
+C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.FormSettings.resources
