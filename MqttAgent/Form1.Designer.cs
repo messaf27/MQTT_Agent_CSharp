@@ -28,276 +28,280 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSettings));
-            btnSave = new Button();
-            agentIconTray = new NotifyIcon(components);
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            SettingsToolStripMenuItem = new ToolStripMenuItem();
-            ExitToolStripMenuItem = new ToolStripMenuItem();
-            AboutToolStripMenuItem = new ToolStripMenuItem();
-            groupBox1 = new GroupBox();
-            textBoxServPassw = new TextBox();
-            textBoxServLogin = new TextBox();
-            label2 = new Label();
-            textBoxServPort = new TextBox();
-            label4 = new Label();
-            textBoxServAddr = new TextBox();
-            label3 = new Label();
-            label1 = new Label();
-            groupBox2 = new GroupBox();
-            textBox6 = new TextBox();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            label5 = new Label();
-            checkBox1 = new CheckBox();
-            groupBox3 = new GroupBox();
-            checkBox3 = new CheckBox();
-            checkBox2 = new CheckBox();
-            contextMenuStrip1.SuspendLayout();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
-            groupBox3.SuspendLayout();
-            SuspendLayout();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.agentIconTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.SettingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxServPassw = new System.Windows.Forms.TextBox();
+            this.textBoxServLogin = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxServPort = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxServAddr = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxTopicJsonDataset = new System.Windows.Forms.TextBox();
+            this.textBoxTopicStatus = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBoxPcOnlineStatusEnable = new System.Windows.Forms.CheckBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkBoxCPUTempEnable = new System.Windows.Forms.CheckBox();
+            this.checkBoxCPULoadEnable = new System.Windows.Forms.CheckBox();
+            this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(275, 291);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(75, 23);
-            btnSave.TabIndex = 0;
-            btnSave.Text = "Сохранить";
-            btnSave.UseVisualStyleBackColor = true;
-            btnSave.Click += btnSave_Click;
+            this.btnSave.Location = new System.Drawing.Point(275, 291);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.Text = "Сохранить";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // agentIconTray
             // 
-            agentIconTray.Icon = (Icon)resources.GetObject("agentIconTray.Icon");
-            agentIconTray.Text = "MQTT Agent";
-            agentIconTray.Visible = true;
-            agentIconTray.MouseClick += agentIconTray_MouseClick;
+            this.agentIconTray.Icon = ((System.Drawing.Icon)(resources.GetObject("agentIconTray.Icon")));
+            this.agentIconTray.Text = "MQTT Agent";
+            this.agentIconTray.Visible = true;
+            this.agentIconTray.MouseClick += new System.Windows.Forms.MouseEventHandler(this.agentIconTray_MouseClick);
             // 
             // contextMenuStrip1
             // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { SettingsToolStripMenuItem, ExitToolStripMenuItem, AboutToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(150, 70);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SettingsToolStripMenuItem,
+            this.ExitToolStripMenuItem,
+            this.AboutToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // SettingsToolStripMenuItem
             // 
-            SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
-            SettingsToolStripMenuItem.Size = new Size(149, 22);
-            SettingsToolStripMenuItem.Text = "Настройки";
-            SettingsToolStripMenuItem.Click += SettingsToolStripMenuItem_Click;
+            this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
+            this.SettingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SettingsToolStripMenuItem.Text = "Настройки";
+            this.SettingsToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // ExitToolStripMenuItem
             // 
-            ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            ExitToolStripMenuItem.Size = new Size(149, 22);
-            ExitToolStripMenuItem.Text = "Выход";
-            ExitToolStripMenuItem.Click += ExitToolStripMenuItem_Click;
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ExitToolStripMenuItem.Text = "Выход";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // AboutToolStripMenuItem
             // 
-            AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
-            AboutToolStripMenuItem.Size = new Size(149, 22);
-            AboutToolStripMenuItem.Text = "О программе";
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutToolStripMenuItem.Text = "О программе";
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBoxServPassw);
-            groupBox1.Controls.Add(textBoxServLogin);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(textBoxServPort);
-            groupBox1.Controls.Add(label4);
-            groupBox1.Controls.Add(textBoxServAddr);
-            groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 12);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(338, 89);
-            groupBox1.TabIndex = 1;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Настройки сервера:";
+            this.groupBox1.Controls.Add(this.textBoxServPassw);
+            this.groupBox1.Controls.Add(this.textBoxServLogin);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.textBoxServPort);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.textBoxServAddr);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(338, 89);
+            this.groupBox1.TabIndex = 1;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Настройки сервера:";
             // 
             // textBoxServPassw
             // 
-            textBoxServPassw.Location = new Point(221, 50);
-            textBoxServPassw.Name = "textBoxServPassw";
-            textBoxServPassw.Size = new Size(109, 23);
-            textBoxServPassw.TabIndex = 1;
+            this.textBoxServPassw.Location = new System.Drawing.Point(221, 50);
+            this.textBoxServPassw.Name = "textBoxServPassw";
+            this.textBoxServPassw.Size = new System.Drawing.Size(109, 23);
+            this.textBoxServPassw.TabIndex = 1;
             // 
             // textBoxServLogin
             // 
-            textBoxServLogin.Location = new Point(59, 50);
-            textBoxServLogin.Name = "textBoxServLogin";
-            textBoxServLogin.Size = new Size(95, 23);
-            textBoxServLogin.TabIndex = 1;
+            this.textBoxServLogin.Location = new System.Drawing.Point(59, 50);
+            this.textBoxServLogin.Name = "textBoxServLogin";
+            this.textBoxServLogin.Size = new System.Drawing.Size(95, 23);
+            this.textBoxServLogin.TabIndex = 1;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(229, 19);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Порт:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(229, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Порт:";
             // 
             // textBoxServPort
             // 
-            textBoxServPort.Location = new Point(273, 16);
-            textBoxServPort.Name = "textBoxServPort";
-            textBoxServPort.Size = new Size(57, 23);
-            textBoxServPort.TabIndex = 1;
+            this.textBoxServPort.Location = new System.Drawing.Point(273, 16);
+            this.textBoxServPort.Name = "textBoxServPort";
+            this.textBoxServPort.Size = new System.Drawing.Size(57, 23);
+            this.textBoxServPort.TabIndex = 1;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(165, 53);
-            label4.Name = "label4";
-            label4.Size = new Size(52, 15);
-            label4.TabIndex = 0;
-            label4.Text = "Пароль:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(165, 53);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Пароль:";
             // 
             // textBoxServAddr
             // 
-            textBoxServAddr.Location = new Point(111, 16);
-            textBoxServAddr.Name = "textBoxServAddr";
-            textBoxServAddr.Size = new Size(112, 23);
-            textBoxServAddr.TabIndex = 1;
+            this.textBoxServAddr.Location = new System.Drawing.Point(111, 16);
+            this.textBoxServAddr.Name = "textBoxServAddr";
+            this.textBoxServAddr.Size = new System.Drawing.Size(112, 23);
+            this.textBoxServAddr.TabIndex = 1;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(9, 53);
-            label3.Name = "label3";
-            label3.Size = new Size(44, 15);
-            label3.TabIndex = 0;
-            label3.Text = "Логин:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Логин:";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(6, 19);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 15);
-            label1.TabIndex = 0;
-            label1.Text = "IP (URL) сервера:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "IP (URL) сервера:";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox6);
-            groupBox2.Controls.Add(textBox5);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(label5);
-            groupBox2.Location = new Point(12, 118);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(338, 79);
-            groupBox2.TabIndex = 1;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Настройки топика:";
+            this.groupBox2.Controls.Add(this.textBoxTopicJsonDataset);
+            this.groupBox2.Controls.Add(this.textBoxTopicStatus);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 118);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(338, 79);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Настройки топика:";
             // 
-            // textBox6
+            // textBoxTopicJsonDataset
             // 
-            textBox6.Location = new Point(111, 45);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(171, 23);
-            textBox6.TabIndex = 1;
+            this.textBoxTopicJsonDataset.Location = new System.Drawing.Point(111, 45);
+            this.textBoxTopicJsonDataset.Name = "textBoxTopicJsonDataset";
+            this.textBoxTopicJsonDataset.Size = new System.Drawing.Size(171, 23);
+            this.textBoxTopicJsonDataset.TabIndex = 1;
             // 
-            // textBox5
+            // textBoxTopicStatus
             // 
-            textBox5.Location = new Point(111, 16);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(171, 23);
-            textBox5.TabIndex = 1;
+            this.textBoxTopicStatus.Location = new System.Drawing.Point(111, 16);
+            this.textBoxTopicStatus.Name = "textBoxTopicStatus";
+            this.textBoxTopicStatus.Size = new System.Drawing.Size(171, 23);
+            this.textBoxTopicStatus.TabIndex = 1;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(9, 48);
-            label6.Name = "label6";
-            label6.Size = new Size(92, 15);
-            label6.TabIndex = 0;
-            label6.Text = "Данные (JSON):";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(92, 15);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Данные (JSON):";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(9, 19);
-            label5.Name = "label5";
-            label5.Size = new Size(81, 15);
-            label5.TabIndex = 0;
-            label5.Text = "Статус топик:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 19);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(81, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Статус топик:";
             // 
-            // checkBox1
+            // checkBoxPcOnlineStatusEnable
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(6, 22);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(123, 19);
-            checkBox1.TabIndex = 2;
-            checkBox1.Text = "ПК онлайн статус";
-            checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxPcOnlineStatusEnable.AutoSize = true;
+            this.checkBoxPcOnlineStatusEnable.Location = new System.Drawing.Point(6, 22);
+            this.checkBoxPcOnlineStatusEnable.Name = "checkBoxPcOnlineStatusEnable";
+            this.checkBoxPcOnlineStatusEnable.Size = new System.Drawing.Size(123, 19);
+            this.checkBoxPcOnlineStatusEnable.TabIndex = 2;
+            this.checkBoxPcOnlineStatusEnable.Text = "ПК онлайн статус";
+            this.checkBoxPcOnlineStatusEnable.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(checkBox3);
-            groupBox3.Controls.Add(checkBox2);
-            groupBox3.Controls.Add(checkBox1);
-            groupBox3.Location = new Point(12, 210);
-            groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(338, 75);
-            groupBox3.TabIndex = 1;
-            groupBox3.TabStop = false;
-            groupBox3.Text = "Отправляемая информация:";
+            this.groupBox3.Controls.Add(this.checkBoxCPUTempEnable);
+            this.groupBox3.Controls.Add(this.checkBoxCPULoadEnable);
+            this.groupBox3.Controls.Add(this.checkBoxPcOnlineStatusEnable);
+            this.groupBox3.Location = new System.Drawing.Point(12, 210);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(338, 75);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Отправляемая информация:";
             // 
-            // checkBox3
+            // checkBoxCPUTempEnable
             // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(181, 50);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(118, 19);
-            checkBox3.TabIndex = 2;
-            checkBox3.Text = "Температура ЦП";
-            checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxCPUTempEnable.AutoSize = true;
+            this.checkBoxCPUTempEnable.Location = new System.Drawing.Point(181, 50);
+            this.checkBoxCPUTempEnable.Name = "checkBoxCPUTempEnable";
+            this.checkBoxCPUTempEnable.Size = new System.Drawing.Size(118, 19);
+            this.checkBoxCPUTempEnable.TabIndex = 2;
+            this.checkBoxCPUTempEnable.Text = "Температура ЦП";
+            this.checkBoxCPUTempEnable.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxCPULoadEnable
             // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(181, 22);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(95, 19);
-            checkBox2.TabIndex = 2;
-            checkBox2.Text = "Загрузка ЦП";
-            checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxCPULoadEnable.AutoSize = true;
+            this.checkBoxCPULoadEnable.Location = new System.Drawing.Point(181, 22);
+            this.checkBoxCPULoadEnable.Name = "checkBoxCPULoadEnable";
+            this.checkBoxCPULoadEnable.Size = new System.Drawing.Size(95, 19);
+            this.checkBoxCPULoadEnable.TabIndex = 2;
+            this.checkBoxCPULoadEnable.Text = "Загрузка ЦП";
+            this.checkBoxCPULoadEnable.UseVisualStyleBackColor = true;
             // 
             // FormSettings
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(362, 326);
-            Controls.Add(groupBox3);
-            Controls.Add(groupBox2);
-            Controls.Add(groupBox1);
-            Controls.Add(btnSave);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
-            MdiChildrenMinimizedAnchorBottom = false;
-            Name = "FormSettings";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "MQTT Agent";
-            Deactivate += FormSettings_Deactivate;
-            FormClosing += FormSettings_FormClosing;
-            Load += FormSettings_Load;
-            contextMenuStrip1.ResumeLayout(false);
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
-            groupBox3.ResumeLayout(false);
-            groupBox3.PerformLayout();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(362, 326);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btnSave);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
+            this.Name = "FormSettings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "MQTT Agent";
+            this.Deactivate += new System.EventHandler(this.FormSettings_Deactivate);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSettings_FormClosing);
+            this.Load += new System.EventHandler(this.FormSettings_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -310,10 +314,10 @@
         private ToolStripMenuItem AboutToolStripMenuItem;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private CheckBox checkBox1;
+        private CheckBox checkBoxPcOnlineStatusEnable;
         private GroupBox groupBox3;
-        private CheckBox checkBox3;
-        private CheckBox checkBox2;
+        private CheckBox checkBoxCPUTempEnable;
+        private CheckBox checkBoxCPULoadEnable;
         private TextBox textBoxServLogin;
         private Label label2;
         private TextBox textBoxServAddr;
@@ -322,8 +326,8 @@
         private TextBox textBoxServPort;
         private Label label4;
         private Label label3;
-        private TextBox textBox6;
-        private TextBox textBox5;
+        private TextBox textBoxTopicJsonDataset;
+        private TextBox textBoxTopicStatus;
         private Label label6;
         private Label label5;
     }

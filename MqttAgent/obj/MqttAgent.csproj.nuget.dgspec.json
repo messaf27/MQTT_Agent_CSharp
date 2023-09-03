@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj": {}
+    "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj": {}
   },
   "projects": {
-    "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj": {
+    "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
+        "projectUniqueName": "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
         "projectName": "MqttAgent",
-        "projectPath": "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
-        "packagesPath": "C:\\Users\\Home-Win10\\.nuget\\packages\\",
-        "outputPath": "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\obj\\",
+        "projectPath": "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
+        "packagesPath": "C:\\Users\\Егор Орленок\\.nuget\\packages\\",
+        "outputPath": "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Home-Win10\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Егор Орленок\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +39,12 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "M2MqttDotnetCore": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -62,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

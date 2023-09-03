@@ -7,6 +7,8 @@ namespace MqttAgent
     public partial class FormSettings : Form
     {
         SettingsOperate settingsOperate = new SettingsOperate();
+        ApplicationOptions applicationOptions = new ApplicationOptions();
+        //ServerClient serverClient = new ServerClient()
 
         public FormSettings()
         {
@@ -29,12 +31,18 @@ namespace MqttAgent
         {
             this.WindowState = FormWindowState.Minimized;
 
-            await settingsOperate.ReadSettingsAsync();
+            applicationOptions = await settingsOperate.ReadOptionsAsync();
 
-            textBoxServAddr.Text = settingsOperate.GetServerName();
-            textBoxServPort.Text = settingsOperate.GetServerPort().ToString();
-            textBoxServLogin.Text = settingsOperate.GetServerLogin();
-            textBoxServPassw.Text = settingsOperate.GetServerPassword();
+            textBoxServAddr.Text = applicationOptions.servAddr;
+            textBoxServPort.Text = applicationOptions.servPort.ToString();
+            textBoxServLogin.Text = applicationOptions.servLogin;
+            textBoxServPassw.Text = applicationOptions.servPassword;
+            textBoxTopicStatus.Text = applicationOptions.topicOnlineStatus;
+            textBoxTopicJsonDataset.Text = applicationOptions.topicDataSet;
+
+            checkBoxPcOnlineStatusEnable.Checked = applicationOptions.onlineStatusEnable;
+            checkBoxCPULoadEnable.Checked = applicationOptions.CpuLoadEnable;
+            checkBoxCPUTempEnable.Checked = applicationOptions.CpuTemperEnable;
         }
 
         private void agentIconTray_MouseClick(object sender, MouseEventArgs e)
@@ -71,7 +79,7 @@ namespace MqttAgent
             Close();
         }
 
-        private async void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
@@ -81,11 +89,20 @@ namespace MqttAgent
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
-            settingsOperate.SetServerAddrPort(textBoxServAddr.Text, int.Parse(textBoxServPort.Text));
-            settingsOperate.SetServerLoginPassword(textBoxServLogin.Text, textBoxServPassw.Text);
-            settingsOperate.SaveSettingsAsync();
+            applicationOptions.servAddr = textBoxServAddr.Text;
+            applicationOptions.servPort = int.Parse(textBoxServPort.Text);
+            applicationOptions.servLogin = textBoxServLogin.Text;
+            applicationOptions.servPassword = textBoxServPassw.Text;
+            applicationOptions.topicOnlineStatus = textBoxTopicStatus.Text;
+            applicationOptions.topicDataSet = textBoxTopicJsonDataset.Text;
+            applicationOptions.onlineStatusEnable = checkBoxPcOnlineStatusEnable.Checked;
+            applicationOptions.CpuLoadEnable = checkBoxCPULoadEnable.Checked;
+            applicationOptions.CpuTemperEnable = checkBoxCPUTempEnable.Checked;
+
+           await settingsOperate.SaveOptionsAsync(applicationOptions);
         }
+
     }
 }

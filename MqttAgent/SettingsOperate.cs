@@ -13,6 +13,19 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace MqttAgent
 {
+    struct ApplicationOptions 
+    { 
+        public string servAddr;
+        public int servPort;
+        public string servLogin;
+        public string servPassword;
+        public string topicOnlineStatus;
+        public string topicDataSet;
+        public bool onlineStatusEnable;
+        public bool CpuLoadEnable;
+        public bool CpuTemperEnable;
+    }
+
     public class SettingsParametres
     {
         //public DateTimeOffset Date { get; set; }
@@ -20,11 +33,11 @@ namespace MqttAgent
         public int ServerPort { get; set; }
         public string? ServerLogin { get; set; }
         public string? ServerPassw { get; set; }
-        //public string? StatusTopic { get; set; }
-        //public string? DataTopic { get; set; }
-        //public bool OnlineStatusEnable { get; set; }
-        //public bool CPULoadEnable { get; set; }
-        //public bool CPUTempEnable { get; set; }
+        public string? StatusTopic { get; set; }
+        public string? DataTopic { get; set; }
+        public bool OnlineStatusEnable { get; set; }
+        public bool CPULoadEnable { get; set; }
+        public bool CPUTempEnable { get; set; }
     }
 
     internal class SettingsOperate
@@ -33,75 +46,30 @@ namespace MqttAgent
         const string settingsFileName = "config.cfg";  // 
         string settingFolderPath = "";
 
-        private string serverName = "";
-        private int serverPort = 1884;
-        private string serverLogin = "";
-        private string serverPassword = "";
-
         public SettingsOperate()
         {
             //settingFolderPath = Path.Combine(Directory.GetCurrentDirectory(), settingsFolderName);
-            settingFolderPath = Path.Combine(@"c:\", settingsFolderName);
+            settingFolderPath = Path.Combine(@"C:\", settingsFolderName);
             Debug.WriteLine("Folder for settings: " + settingFolderPath);
         }
 
-        public void SetServerAddrPort(string addr, int port)
-        {
-            serverName = addr;
-            serverPort = port;
-        }
-
-        public void SetServerLoginPassword(string login, string password)
-        {
-            serverLogin = login;
-            serverPassword = password;
-        }
-
-        public string GetServerName()
-        {
-            return serverName;
-        }
-
-        public int GetServerPort()
-        {
-            return serverPort;
-        }
-
-        public string GetServerLogin()
-        {
-            return serverLogin;
-        }
-
-        public string GetServerPassword() 
-        { 
-            return serverPassword;
-        }
-
-        public async Task<bool> SaveSettingsAsync()
+        public async Task<bool> SaveOptionsAsync(ApplicationOptions options)
         {
             var settingsParametres = new SettingsParametres()
             {
-                ServerName = this.serverName,
-                ServerPort = this.serverPort,
-                ServerLogin = this.serverLogin,
-                ServerPassw = this.serverPassword
+                ServerName = options.servAddr,
+                ServerPort = options.servPort,
+                ServerLogin = options.servLogin,
+                ServerPassw = options.servPassword,
+                StatusTopic = options.topicOnlineStatus,
+                DataTopic = options.topicDataSet,
+                OnlineStatusEnable = options.onlineStatusEnable,
+                CPULoadEnable = options.CpuLoadEnable,
+                CPUTempEnable = options.CpuTemperEnable
             };
 
             string jsonSettingsString = JsonSerializer.Serialize(settingsParametres);
             Debug.WriteLine($"JSON: {jsonSettingsString}");
-
-            //try
-            //{
-            //    FileInfo fileInfo = new FileInfo(Path.Combine(settingFolderPath, settingsFileName));
-            //    StreamWriter sw = fileInfo.CreateText();
-            //    sw.WriteLine(jsonSettingsString);
-            //    sw.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.Message);
-            //    return false;
-            //}
 
             if (!Directory.Exists(settingFolderPath))
             {
@@ -126,12 +94,14 @@ namespace MqttAgent
             return true;
         }
 
-        public async Task<bool> ReadSettingsAsync()
+        public async Task<ApplicationOptions> ReadOptionsAsync()
         {
-            if(File.Exists(Path.Combine(settingFolderPath, settingsFileName)))
+            var options = new ApplicationOptions();
+
+            if (File.Exists(Path.Combine(settingFolderPath, settingsFileName)))
             {
                 // чтение из файла
-                using (FileStream fstream = File.OpenRead(Path.Combine(settingFolderPath, settingsFileName)))
+                 using (FileStream fstream = File.OpenRead(Path.Combine(settingFolderPath, settingsFileName)))
                 {
                     // выделяем массив для считывания данных из файла
                     byte[] buffer = new byte[fstream.Length];
@@ -144,23 +114,29 @@ namespace MqttAgent
 
                     SettingsParametres settingsParametres = JsonSerializer.Deserialize<SettingsParametres>(jsonString);
 
-                    this.serverName = settingsParametres.ServerName;
-                    this.serverPort = settingsParametres.ServerPort;
-                    this.serverLogin = settingsParametres.ServerLogin;
-                    this.serverPassword = settingsParametres.ServerPassw;
+                    options.servAddr = settingsParametres.ServerName;
+                    options.servPort = settingsParametres.ServerPort;
+                    options.servLogin = settingsParametres.ServerLogin;
+                    options.servPassword = settingsParametres.ServerPassw;
+                    options.topicOnlineStatus = settingsParametres.StatusTopic;
+                    options.topicDataSet = settingsParametres.DataTopic;
+                    options.onlineStatusEnable = (bool)settingsParametres.OnlineStatusEnable;
+                    options.CpuLoadEnable = (bool)settingsParametres.CPULoadEnable;
+                    options.CpuTemperEnable = (bool)settingsParametres.CPUTempEnable;
 
-                    Debug.WriteLine($"ServerName: {this.serverName}");
-                    Debug.WriteLine($"ServerPort: {this.serverPort}");
-                    Debug.WriteLine($"ServerLogin: {this.serverLogin}");
-                    Debug.WriteLine($"ServerPassw: {this.serverPassword}");
+                    Debug.WriteLine($"ServerName: {options.servAddr}");
+                    Debug.WriteLine($"ServerPort: {options.servPort}");
+                    Debug.WriteLine($"ServerLogin: {options.servLogin}");
+                    Debug.WriteLine($"ServerPassw: {options.servPassword}");
+                    Debug.WriteLine($"onlineStatusEnable: {options.onlineStatusEnable}");
+                    Debug.WriteLine($"topicDataSet: {options.topicDataSet}");
+                    Debug.WriteLine($"onlineStatusEnable: {options.onlineStatusEnable}");
+                    Debug.WriteLine($"CpuLoadEnable: {options.CpuLoadEnable}");
+                    Debug.WriteLine($"CpuTemperEnable: {options.CpuTemperEnable}");
                 }
             }
-            else
-            {
-                return false;
-            }
 
-            return true;
+            return options;
         }
     }
 }
