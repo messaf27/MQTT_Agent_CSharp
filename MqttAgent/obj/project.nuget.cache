@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tQ16UDeHOMNzM1vXgzmxrDlbqkOKEtO9dsdPeza2dlyQo9aorXz78g9Sn+XnM8r2kwMYjikYw3GBe0JMfU4AWQ==",
+  "dgSpecHash": "AsSt3gNgfvKfM5cYIAtq28bVP/VcfZ4gZ6xGzMeTUrXy1P4HLIUhKax5fDGp5xro2/W3pAIFEQKOsPcJNZUWHA==",
   "success": true,
-  "projectFilePath": "E:\\VisualStudio\\MqttAgent\\MqttAgent\\MqttAgent.csproj",
+  "projectFilePath": "D:\\VS2022_projects\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

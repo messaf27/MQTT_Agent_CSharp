@@ -6,11 +6,11 @@ namespace MqttAgent
 {
     public partial class FormSettings : Form
     {
+        SettingsOperate settingsOperate = new SettingsOperate();
 
         public FormSettings()
         {
             InitializeComponent();
-            SettingsOperate settingsOperate= new SettingsOperate();
             Debug.WriteLine("Start MQTT Agent");
         }
 
@@ -76,7 +76,9 @@ namespace MqttAgent
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            settingsOperate.SetServerAddrPort(textBoxServAddr.Text, int.Parse(textBoxServPort.Text));
+            settingsOperate.SetServerLoginPassword(textBoxServLogin.Text, textBoxServPassw.Text);
+            settingsOperate.SaveSettings();
         }
     }
 }

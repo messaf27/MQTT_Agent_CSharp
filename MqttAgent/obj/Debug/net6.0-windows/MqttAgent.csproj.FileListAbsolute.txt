@@ -15,3 +15,20 @@ C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6
 C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.genruntimeconfig.cache
 C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\ref\MqttAgent.dll
 C:\Users\Егор Орленок\source\repos\MqttAgent\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.FormSettings.resources
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.exe
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.deps.json
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.runtimeconfig.json
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.dll
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\MqttAgent.pdb
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.AssemblyReference.cache
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.FormSettings.resources
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.GenerateResource.cache
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.GeneratedMSBuildEditorConfig.editorconfig
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.AssemblyInfoInputs.cache
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.AssemblyInfo.cs
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.CoreCompileInputs.cache
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.dll
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\refint\MqttAgent.dll
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.pdb
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.genruntimeconfig.cache
+D:\VS2022_projects\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\ref\MqttAgent.dll
