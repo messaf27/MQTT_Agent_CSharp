@@ -25,9 +25,16 @@ namespace MqttAgent
         }
 
 
-        private void FormSettings_Load(object sender, EventArgs e)
+        private async void FormSettings_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+
+            await settingsOperate.ReadSettingsAsync();
+
+            textBoxServAddr.Text = settingsOperate.GetServerName();
+            textBoxServPort.Text = settingsOperate.GetServerPort().ToString();
+            textBoxServLogin.Text = settingsOperate.GetServerLogin();
+            textBoxServPassw.Text = settingsOperate.GetServerPassword();
         }
 
         private void agentIconTray_MouseClick(object sender, MouseEventArgs e)
@@ -64,7 +71,7 @@ namespace MqttAgent
             Close();
         }
 
-        private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
+        private async void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
@@ -78,7 +85,7 @@ namespace MqttAgent
         {
             settingsOperate.SetServerAddrPort(textBoxServAddr.Text, int.Parse(textBoxServPort.Text));
             settingsOperate.SetServerLoginPassword(textBoxServLogin.Text, textBoxServPassw.Text);
-            settingsOperate.SaveSettings();
+            settingsOperate.SaveSettingsAsync();
         }
     }
 }
