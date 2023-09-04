@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Threading;
 
 namespace MqttAgent
 {
@@ -9,6 +10,70 @@ namespace MqttAgent
         SettingsOperate settingsOperate = new SettingsOperate();
         ApplicationOptions applicationOptions = new ApplicationOptions();
         Mqtt client = new Mqtt();
+        Thread clientThread;
+        bool clientThreadEnable;
+
+        public void Connect()
+        {
+            Debug.WriteLine("Mqttt disconnected? begin connection...");
+
+            bool result = client.Connect(applicationOptions.servAddr,
+                                            applicationOptions.servPort,
+                                            applicationOptions.servLogin,
+                                            applicationOptions.servPassword);
+
+            Debug.WriteLine($"Mqtt connect result: {result}");
+        }
+
+        //public void ClientApp(object? clientObject)
+        //{
+        //    UInt32 pubCounter = 0;
+
+        //    Mqtt? appClient = (Mqtt)clientObject;
+
+        //    while (clientThreadEnable)
+        //    {
+        //        Debug.WriteLine("Loop Thread...");
+
+        //        if (appClient.IsConnected())
+        //        {
+        //            pubCounter++;
+        //            appClient.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
+        //            Debug.WriteLine($"Publish loop: {pubCounter}");
+        //        }
+        //        else
+        //        {
+        //            Reconnect();
+        //        }
+
+        //        Thread.Sleep(5000);
+        //    }
+        //}
+
+        public void ClientApp()
+        {
+            UInt32 pubCounter = 0;
+
+            Connect();
+
+            while (clientThreadEnable)
+            {
+                Debug.WriteLine("Loop Thread...");
+
+                if (client.IsConnected())
+                {
+                    pubCounter++;
+                    client.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
+                    Debug.WriteLine($"Publish loop: {pubCounter}");
+                }
+                else
+                {
+                    Connect();
+                }
+
+                Thread.Sleep(5000);
+            }
+        }
 
         public FormSettings()
         {
@@ -44,13 +109,27 @@ namespace MqttAgent
             checkBoxCPULoadEnable.Checked = applicationOptions.CpuLoadEnable;
             checkBoxCPUTempEnable.Checked = applicationOptions.CpuTemperEnable;
 
-            bool result = client.Connect(
-                applicationOptions.servAddr, 
-                applicationOptions.servPort, 
-                applicationOptions.servLogin, 
-                applicationOptions.servPassword);
+            //Debug.WriteLine("Mqttt disconnected? begin connection...");
 
-            Debug.WriteLine($"Mqtt connect result: {result}");
+            //bool result = client.Connect(applicationOptions.servAddr,
+            //                                applicationOptions.servPort,
+            //                                applicationOptions.servLogin,
+            //                                applicationOptions.servPassword);
+
+            //Debug.WriteLine($"Mqtt connect result: {result}");
+
+            //clientThread = new Thread(new ParameterizedThreadStart(ClientApp));
+            clientThread = new Thread(ClientApp);
+            clientThreadEnable = true;
+            clientThread.Start();
+
+            //bool result = client.Connect(
+            //    applicationOptions.servAddr, 
+            //    applicationOptions.servPort, 
+            //    applicationOptions.servLogin, 
+            //    applicationOptions.servPassword);
+
+            //Debug.WriteLine($"Mqtt connect result: {result}");
         }
 
         private void agentIconTray_MouseClick(object sender, MouseEventArgs e)
@@ -113,7 +192,11 @@ namespace MqttAgent
         }
 
         private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
-        { 
+        {
+            //clientThread.Abort();
+            clientThreadEnable = false;
+            clientThread.Join(10000);
+
             client.Disconnect();
         }
     }
