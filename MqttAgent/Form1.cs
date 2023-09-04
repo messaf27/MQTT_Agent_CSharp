@@ -8,7 +8,7 @@ namespace MqttAgent
     {
         SettingsOperate settingsOperate = new SettingsOperate();
         ApplicationOptions applicationOptions = new ApplicationOptions();
-        //ServerClient serverClient = new ServerClient()
+        Mqtt client = new Mqtt();
 
         public FormSettings()
         {
@@ -43,6 +43,14 @@ namespace MqttAgent
             checkBoxPcOnlineStatusEnable.Checked = applicationOptions.onlineStatusEnable;
             checkBoxCPULoadEnable.Checked = applicationOptions.CpuLoadEnable;
             checkBoxCPUTempEnable.Checked = applicationOptions.CpuTemperEnable;
+
+            bool result = client.Connect(
+                applicationOptions.servAddr, 
+                applicationOptions.servPort, 
+                applicationOptions.servLogin, 
+                applicationOptions.servPassword);
+
+            Debug.WriteLine($"Mqtt connect result: {result}");
         }
 
         private void agentIconTray_MouseClick(object sender, MouseEventArgs e)
@@ -104,5 +112,9 @@ namespace MqttAgent
            await settingsOperate.SaveOptionsAsync(applicationOptions);
         }
 
+        private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
+        { 
+            client.Disconnect();
+        }
     }
 }
