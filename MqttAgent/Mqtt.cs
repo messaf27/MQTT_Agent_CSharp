@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,18 +14,25 @@ namespace MqttAgent
 {
     internal class Mqtt : InterfaceClient
     {
-        private MqttClient client;
+        private MqttClient? client;
         private string idClient = "MqttAgentPC";
-        private string willTopic;
+        private string? willTopic;
+
+        //public Mqtt()
+        //{
+        //    Debug.WriteLine($"Client topic: {this.idClient + "/" + this.willTopic}");
+        //}
 
         public bool Connect(string serv, int port, string login, string password)
         {
             this.willTopic = "status/";
 
+            Debug.WriteLine($"Client topic: {this.idClient + "/" + this.willTopic}");
+
             this.client = new MqttClient(serv);
             if (!this.client.IsConnected)
             {
-                client.Connect("MqttAgentPC",
+                client.Connect(idClient,
                     login,
                     password,
                     willRetain: true,
@@ -44,9 +52,11 @@ namespace MqttAgent
             this.client = new MqttClient(serv);
             this.willTopic = willTopic;
 
+            Debug.WriteLine($"Client topic: {this.idClient + "/" + this.willTopic}");
+
             if (!this.client.IsConnected)
             {
-                client.Connect("MqttAgentPC", 
+                client.Connect(idClient, 
                     login, 
                     password, 
                     willRetain:true, 
@@ -57,6 +67,9 @@ namespace MqttAgent
                     cleanSession:true,
                     keepAlivePeriod:15);
             }
+            
+            if(this.client.IsConnected)
+                client.Publish(this.idClient + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"));
 
             return this.client.IsConnected;
         }
