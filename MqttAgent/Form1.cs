@@ -15,7 +15,7 @@ namespace MqttAgent
 
         public void Connect()
         {
-            Debug.WriteLine("Mqttt disconnected? begin connection...");
+            Debug.WriteLine("Mqttt disconnected begin connection...");
 
             bool result = client.Connect(applicationOptions.servAddr,
                                             applicationOptions.servPort,
@@ -25,59 +25,69 @@ namespace MqttAgent
             Debug.WriteLine($"Mqtt connect result: {result}");
         }
 
-        //public void ClientApp(object? clientObject)
-        //{
-        //    UInt32 pubCounter = 0;
+        public void ClientStart()
+        {
+            Debug.WriteLine("Client Start.");
+            //clientThread = new Thread(new ParameterizedThreadStart(ClientApp));
+            clientThread = new Thread(ClientApp);
+            clientThreadEnable = true;
+            clientThread.Start();
+        }
 
-        //    Mqtt? appClient = (Mqtt)clientObject;
+        public void ClientStop()
+        {
+            Debug.WriteLine("Client Stop.");
+            //clientThread.Abort();
+            clientThreadEnable = false;
+            clientThread.Join(500);
 
-        //    while (clientThreadEnable)
-        //    {
-        //        Debug.WriteLine("Loop Thread...");
+            client.Disconnect();
+        }
 
-        //        if (appClient.IsConnected())
-        //        {
-        //            pubCounter++;
-        //            appClient.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
-        //            Debug.WriteLine($"Publish loop: {pubCounter}");
-        //        }
-        //        else
-        //        {
-        //            Reconnect();
-        //        }
-
-        //        Thread.Sleep(5000);
-        //    }
-        //}
+        public void ClientRestart()
+        {
+            Debug.WriteLine("Client ReStart.");
+            ClientStop();
+            ClientStart();
+        }
 
         public void ClientApp()
         {
             UInt32 pubCounter = 0;
+            UInt16 pubTimeout = 0;
 
             Connect();
 
             while (clientThreadEnable)
             {
-                Debug.WriteLine("Loop Thread...");
+                //Debug.WriteLine("Loop Thread...");
 
                 if (client.IsConnected())
                 {
-                    pubCounter++;
-                    client.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
-                    Debug.WriteLine($"Publish loop: {pubCounter}");
+                    if(pubTimeout >= 50) // 5 seconds
+                    {
+                        pubCounter++;
+                        client.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
+                        Debug.WriteLine($"Publish loop: {pubCounter}");
+
+                        pubTimeout = 0;
+                    }
                 }
                 else
                 {
                     Connect();
+                    pubTimeout = 0;
                 }
 
-                Thread.Sleep(5000);
+                Thread.Sleep(100);
+                pubTimeout++;
             }
         }
 
         public FormSettings()
         {
             InitializeComponent();
+            //this.Icon = Res
             Debug.WriteLine("Start MQTT Agent");
         }
 
@@ -90,7 +100,6 @@ namespace MqttAgent
                 agentIconTray.Visible = true;
             }
         }
-
 
         private async void FormSettings_Load(object sender, EventArgs e)
         {
@@ -109,27 +118,7 @@ namespace MqttAgent
             checkBoxCPULoadEnable.Checked = applicationOptions.CpuLoadEnable;
             checkBoxCPUTempEnable.Checked = applicationOptions.CpuTemperEnable;
 
-            //Debug.WriteLine("Mqttt disconnected? begin connection...");
-
-            //bool result = client.Connect(applicationOptions.servAddr,
-            //                                applicationOptions.servPort,
-            //                                applicationOptions.servLogin,
-            //                                applicationOptions.servPassword);
-
-            //Debug.WriteLine($"Mqtt connect result: {result}");
-
-            //clientThread = new Thread(new ParameterizedThreadStart(ClientApp));
-            clientThread = new Thread(ClientApp);
-            clientThreadEnable = true;
-            clientThread.Start();
-
-            //bool result = client.Connect(
-            //    applicationOptions.servAddr, 
-            //    applicationOptions.servPort, 
-            //    applicationOptions.servLogin, 
-            //    applicationOptions.servPassword);
-
-            //Debug.WriteLine($"Mqtt connect result: {result}");
+            ClientStart();
         }
 
         private void agentIconTray_MouseClick(object sender, MouseEventArgs e)
@@ -188,16 +177,14 @@ namespace MqttAgent
             applicationOptions.CpuLoadEnable = checkBoxCPULoadEnable.Checked;
             applicationOptions.CpuTemperEnable = checkBoxCPUTempEnable.Checked;
 
-           await settingsOperate.SaveOptionsAsync(applicationOptions);
+            await settingsOperate.SaveOptionsAsync(applicationOptions);
+
+            ClientRestart();
         }
 
         private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //clientThread.Abort();
-            clientThreadEnable = false;
-            clientThread.Join(10000);
-
-            client.Disconnect();
+            ClientStop();
         }
     }
 }

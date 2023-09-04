@@ -25,20 +25,30 @@ namespace MqttAgent
             Debug.WriteLine($"Client topic: {this.clientUniqID + "/" + this.willTopic}");
 
             this.client = new MqttClient(serv);
-            if (!this.client.IsConnected)
+
+            try
             {
-                client.Connect(clientUniqID,
-                    login,
-                    password,
-                    willRetain: false, // true 
-                    willTopic: this.clientUniqID + "/" + this.willTopic,
-                    willMessage: "offline",
-                    //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
-                    willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
-                    willFlag: true,
-                    cleanSession: true,
-                    keepAlivePeriod: 15);
+                if (!this.client.IsConnected)
+                {
+                    client.Connect(clientUniqID,
+                        login,
+                        password,
+                        willRetain: false, // true 
+                        willTopic: this.clientUniqID + "/" + this.willTopic,
+                        willMessage: "offline",
+                        //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+                        willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
+                        willFlag: true,
+                        cleanSession: true,
+                        keepAlivePeriod: 15);
+                }
             }
+            catch(Exception ex)
+            {
+                Debug.WriteLine($"Connection failure: {ex.Message}");
+            }
+
+
 
             if (this.client.IsConnected)
                 client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"));
@@ -53,19 +63,26 @@ namespace MqttAgent
 
             Debug.WriteLine($"Client topic: {this.clientUniqID + "/" + this.willTopic}");
 
-            if (!this.client.IsConnected)
+            try
             {
-                this.client.Connect(clientUniqID,
-                    login,
-                    password,
-                    willRetain: false, // true 
-                    willTopic: this.clientUniqID + "/" + this.willTopic,
-                    willMessage: willMessage,
-                    //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
-                    willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
-                    willFlag: true,
-                    cleanSession: true,
-                    keepAlivePeriod: 15);
+                if (!this.client.IsConnected)
+                {
+                    this.client.Connect(clientUniqID,
+                        login,
+                        password,
+                        willRetain: false, // true 
+                        willTopic: this.clientUniqID + "/" + this.willTopic,
+                        willMessage: willMessage,
+                        //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+                        willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
+                        willFlag: true,
+                        cleanSession: true,
+                        keepAlivePeriod: 15);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Connection failure: {ex.Message}");
             }
 
             if (this.client.IsConnected)
@@ -76,8 +93,15 @@ namespace MqttAgent
 
         public bool Disconnect()
         {
-            this.client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("offline"));
-            this.client.Disconnect();
+            try 
+            {
+                this.client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("offline"));
+                this.client.Disconnect();
+            }
+            catch
+            {
+                Debug.WriteLine("Disconnect failure");
+            }
 
             return this.client.IsConnected;
         }
