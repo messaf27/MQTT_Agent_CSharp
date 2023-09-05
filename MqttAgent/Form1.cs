@@ -45,9 +45,8 @@ namespace MqttAgent
             Debug.WriteLine("Client Stop.");
             //clientThread.Abort();
             clientThreadEnable = false;
-            clientThread.Join(500);
-
             client.Disconnect();
+            clientThread.Join(500);
         }
 
         public void ClientRestart()
@@ -199,6 +198,16 @@ namespace MqttAgent
         private void FormSettings_FormClosed(object sender, FormClosedEventArgs e)
         {
             ClientStop();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+                agentIconTray.Visible = true;
+            }
         }
     }
 }

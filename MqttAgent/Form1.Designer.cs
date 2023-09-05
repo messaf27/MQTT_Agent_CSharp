@@ -56,6 +56,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxCPUTempEnable = new System.Windows.Forms.CheckBox();
             this.checkBoxCPULoadEnable = new System.Windows.Forms.CheckBox();
+            this.buttonClose = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,11 +65,11 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(275, 327);
+            this.btnSave.Location = new System.Drawing.Point(11, 337);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(93, 23);
             this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Сохранить";
+            this.btnSave.Text = "Применить";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -294,6 +295,16 @@
             this.checkBoxCPULoadEnable.Text = "Загрузка ЦП";
             this.checkBoxCPULoadEnable.UseVisualStyleBackColor = true;
             // 
+            // buttonClose
+            // 
+            this.buttonClose.Location = new System.Drawing.Point(257, 337);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(93, 23);
+            this.buttonClose.TabIndex = 0;
+            this.buttonClose.Text = "Закрыть";
+            this.buttonClose.UseVisualStyleBackColor = true;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
             // FormSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -302,6 +313,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.btnSave);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -353,5 +365,6 @@
         private Label label5;
         private TextBox textBoxClientID;
         private Label label7;
+        private Button buttonClose;
     }
 }

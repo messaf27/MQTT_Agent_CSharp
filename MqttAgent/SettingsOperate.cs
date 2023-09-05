@@ -51,7 +51,11 @@ namespace MqttAgent
         public SettingsOperate()
         {
             //settingFolderPath = Path.Combine(Directory.GetCurrentDirectory(), settingsFolderName);
-            settingFolderPath = Path.Combine(@"C:\", settingsFolderName);
+            //settingFolderPath = Path.Combine(@"C:\", settingsFolderName);
+
+            //settingFolderPath = Path.Combine(Environment.CurrentDirectory, settingsFolderName);
+            settingFolderPath = Environment.CurrentDirectory;
+
             Debug.WriteLine("Folder for settings: " + settingFolderPath);
         }
 

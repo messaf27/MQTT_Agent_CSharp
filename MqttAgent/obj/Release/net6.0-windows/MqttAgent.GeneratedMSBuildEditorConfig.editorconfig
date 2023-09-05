@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MqttAgent
-build_property.ProjectDir = E:\VisualStudio\MqttAgent\MqttAgent\
+build_property.ProjectDir = E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\
