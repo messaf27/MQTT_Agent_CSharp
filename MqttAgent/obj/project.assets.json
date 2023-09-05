@@ -236,6 +236,19 @@
           }
         }
       },
+      "StatShark/1.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/StatShark.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/StatShark.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1433,6 +1446,21 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "StatShark/1.0.6": {
+      "sha512": "6X3ZYVwnc1RWLBm5rzb7vHqK5p5tz6yhPE5E9yQJRwYm/p35DmETt8dkxHysy2GnySrodlGLNSYggstmja3jeg==",
+      "type": "package",
+      "path": "statshark/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "2628402.png",
+        "README.md",
+        "lib/net6.0/StatShark.dll",
+        "lib/net6.0/StatShark.runtimeconfig.json",
+        "statshark.1.0.6.nupkg.sha512",
+        "statshark.nuspec"
       ]
     },
     "System.Collections/4.3.0": {
@@ -3494,7 +3522,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
-      "M2MqttDotnetCore >= 1.1.0"
+      "M2MqttDotnetCore >= 1.1.0",
+      "StatShark >= 1.0.6"
     ]
   },
   "packageFolders": {
@@ -3539,6 +3568,10 @@
           "M2MqttDotnetCore": {
             "target": "Package",
             "version": "[1.1.0, )"
+          },
+          "StatShark": {
+            "target": "Package",
+            "version": "[1.0.6, )"
           }
         },
         "imports": [

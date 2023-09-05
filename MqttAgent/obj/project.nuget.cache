@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "CTsf3Ke/KnXaZPnoOklL9r4mettE1nt/+bGVQ4XVdHqcKzodOxRoeV+IOBYzxYxnbghPQ5aI16vX9ikE3lD4vg==",
+  "dgSpecHash": "Gdvbr0X5Wwb4+m/w+VoDB00FPFJ1E2tBOSsXRcm5eyw6QOICBJtELIPwubWOtN43Beiopi/uzQEVhi3y9jK/EA==",
   "success": true,
   "projectFilePath": "E:\\VisualStudio\\MQTT_Agent_CSharp\\MqttAgent\\MqttAgent.csproj",
   "expectedPackageFiles": [
@@ -25,6 +25,7 @@
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
+    "C:\\Users\\Егор Орленок\\.nuget\\packages\\statshark\\1.0.6\\statshark.1.0.6.nupkg.sha512",
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
     "C:\\Users\\Егор Орленок\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",

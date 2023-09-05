@@ -12,15 +12,21 @@ namespace MqttAgent
         Mqtt client = new Mqtt();
         Thread clientThread;
         bool clientThreadEnable;
+        StatusPC pcInfo = new StatusPC();
 
         public void Connect()
         {
             Debug.WriteLine("Mqttt disconnected begin connection...");
 
-            bool result = client.Connect(applicationOptions.servAddr,
-                                            applicationOptions.servPort,
-                                            applicationOptions.servLogin,
-                                            applicationOptions.servPassword);
+            bool result = client.Connect
+            (
+                applicationOptions.machineName,
+                applicationOptions.servAddr,
+                applicationOptions.servPort,
+                applicationOptions.servLogin,
+                applicationOptions.servPassword,
+                applicationOptions.topicOnlineStatus
+            );
 
             Debug.WriteLine($"Mqtt connect result: {result}");
         }
@@ -60,15 +66,13 @@ namespace MqttAgent
 
             while (clientThreadEnable)
             {
-                //Debug.WriteLine("Loop Thread...");
-
                 if (client.IsConnected())
                 {
                     if(pubTimeout >= 50) // 5 seconds
                     {
                         pubCounter++;
-                        client.Publish(applicationOptions.topicDataSet, $"Test dataset: {pubCounter}");
-                        Debug.WriteLine($"Publish loop: {pubCounter}");
+
+                        client.Publish(applicationOptions.topicDataSet, pcInfo.getJsonFormat());
 
                         pubTimeout = 0;
                     }
@@ -111,6 +115,15 @@ namespace MqttAgent
             textBoxServPort.Text = applicationOptions.servPort.ToString();
             textBoxServLogin.Text = applicationOptions.servLogin;
             textBoxServPassw.Text = applicationOptions.servPassword;
+
+            if (applicationOptions.machineName == null)
+            {
+                textBoxClientID.Text = Environment.MachineName;
+                applicationOptions.machineName = textBoxClientID.Text;
+            }
+            else
+                textBoxClientID.Text = applicationOptions.machineName;
+
             textBoxTopicStatus.Text = applicationOptions.topicOnlineStatus;
             textBoxTopicJsonDataset.Text = applicationOptions.topicDataSet;
 
@@ -171,6 +184,7 @@ namespace MqttAgent
             applicationOptions.servPort = int.Parse(textBoxServPort.Text);
             applicationOptions.servLogin = textBoxServLogin.Text;
             applicationOptions.servPassword = textBoxServPassw.Text;
+            applicationOptions.machineName = textBoxClientID.Text;
             applicationOptions.topicOnlineStatus = textBoxTopicStatus.Text;
             applicationOptions.topicDataSet = textBoxTopicJsonDataset.Text;
             applicationOptions.onlineStatusEnable = checkBoxPcOnlineStatusEnable.Checked;

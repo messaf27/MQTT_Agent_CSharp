@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "MqttAgent/1.0.0": {
         "dependencies": {
-          "M2MqttDotnetCore": "1.1.0"
+          "M2MqttDotnetCore": "1.1.0",
+          "StatShark": "1.0.6"
         },
         "runtime": {
           "MqttAgent.dll": {}
@@ -92,6 +93,14 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {},
+      "StatShark/1.0.6": {
+        "runtime": {
+          "lib/net6.0/StatShark.dll": {
+            "assemblyVersion": "1.0.1.0",
+            "fileVersion": "1.0.1.0"
+          }
+        }
+      },
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
@@ -660,6 +669,13 @@
       "sha512": "sha512-leXiwfiIkW7Gmn7cgnNcdtNAU70SjmKW3jxGj1iKHOvdn0zRWsgv/l2OJUO5zdGdiv2VRFnAsxxhDgMzofPdWg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.2",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512"
+    },
+    "StatShark/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6X3ZYVwnc1RWLBm5rzb7vHqK5p5tz6yhPE5E9yQJRwYm/p35DmETt8dkxHysy2GnySrodlGLNSYggstmja3jeg==",
+      "path": "statshark/1.0.6",
+      "hashPath": "statshark.1.0.6.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",

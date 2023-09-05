@@ -52,3 +52,4 @@ E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\ref\MqttAge
 E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\M2Mqtt.dll
 E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.csproj.CopyComplete
 E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\obj\Debug\net6.0-windows\MqttAgent.Properties.Resources.resources
+E:\VisualStudio\MQTT_Agent_CSharp\MqttAgent\bin\Debug\net6.0-windows\StatShark.dll

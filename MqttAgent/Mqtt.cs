@@ -14,12 +14,13 @@ namespace MqttAgent
 {
     internal class Mqtt : InterfaceClient
     {
-        private string clientUniqID = "MqttAgentPC";
+        private string clientUniqID = Environment.MachineName;
         private string? willTopic;
         private MqttClient? client;
 
-        public bool Connect(string serv, int port, string login, string password)
+        public bool Connect(string clientName, string serv, int port, string login, string password)
         {
+            this.clientUniqID = clientName;
             this.willTopic = "status";
 
             Debug.WriteLine($"Client topic: {this.clientUniqID + "/" + this.willTopic}");
@@ -56,9 +57,10 @@ namespace MqttAgent
             return this.client.IsConnected;
         }
 
-        public bool Connect(string serv, int port, string login, string password, string willTopic, string willMessage)
+        public bool Connect(string clientName, string serv, int port, string login, string password, string willTopic)
         {
             this.client = new MqttClient(serv);
+            this.clientUniqID = clientName;
             this.willTopic = willTopic;
 
             Debug.WriteLine($"Client topic: {this.clientUniqID + "/" + this.willTopic}");
@@ -72,8 +74,7 @@ namespace MqttAgent
                         password,
                         willRetain: false, // true 
                         willTopic: this.clientUniqID + "/" + this.willTopic,
-                        willMessage: willMessage,
-                        //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+                        willMessage: "offline",
                         willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
                         willFlag: true,
                         cleanSession: true,

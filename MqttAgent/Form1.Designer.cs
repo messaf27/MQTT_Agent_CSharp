@@ -46,10 +46,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxClientID = new System.Windows.Forms.TextBox();
             this.textBoxTopicJsonDataset = new System.Windows.Forms.TextBox();
             this.textBoxTopicStatus = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.checkBoxPcOnlineStatusEnable = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.checkBoxCPUTempEnable = new System.Windows.Forms.CheckBox();
@@ -62,7 +64,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(275, 291);
+            this.btnSave.Location = new System.Drawing.Point(275, 327);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 0;
@@ -118,29 +120,29 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(338, 89);
+            this.groupBox1.Size = new System.Drawing.Size(338, 95);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки сервера:";
             // 
             // textBoxServPassw
             // 
-            this.textBoxServPassw.Location = new System.Drawing.Point(221, 50);
+            this.textBoxServPassw.Location = new System.Drawing.Point(223, 51);
             this.textBoxServPassw.Name = "textBoxServPassw";
             this.textBoxServPassw.Size = new System.Drawing.Size(109, 23);
-            this.textBoxServPassw.TabIndex = 1;
+            this.textBoxServPassw.TabIndex = 4;
             // 
             // textBoxServLogin
             // 
-            this.textBoxServLogin.Location = new System.Drawing.Point(59, 50);
+            this.textBoxServLogin.Location = new System.Drawing.Point(61, 51);
             this.textBoxServLogin.Name = "textBoxServLogin";
             this.textBoxServLogin.Size = new System.Drawing.Size(95, 23);
-            this.textBoxServLogin.TabIndex = 1;
+            this.textBoxServLogin.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(229, 19);
+            this.label2.Location = new System.Drawing.Point(231, 20);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 15);
             this.label2.TabIndex = 0;
@@ -148,15 +150,15 @@
             // 
             // textBoxServPort
             // 
-            this.textBoxServPort.Location = new System.Drawing.Point(273, 16);
+            this.textBoxServPort.Location = new System.Drawing.Point(275, 17);
             this.textBoxServPort.Name = "textBoxServPort";
             this.textBoxServPort.Size = new System.Drawing.Size(57, 23);
-            this.textBoxServPort.TabIndex = 1;
+            this.textBoxServPort.TabIndex = 2;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(165, 53);
+            this.label4.Location = new System.Drawing.Point(167, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 0;
@@ -164,7 +166,7 @@
             // 
             // textBoxServAddr
             // 
-            this.textBoxServAddr.Location = new System.Drawing.Point(111, 16);
+            this.textBoxServAddr.Location = new System.Drawing.Point(113, 17);
             this.textBoxServAddr.Name = "textBoxServAddr";
             this.textBoxServAddr.Size = new System.Drawing.Size(112, 23);
             this.textBoxServAddr.TabIndex = 1;
@@ -172,7 +174,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 53);
+            this.label3.Location = new System.Drawing.Point(8, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 15);
             this.label3.TabIndex = 0;
@@ -181,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 19);
+            this.label1.Location = new System.Drawing.Point(8, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 15);
             this.label1.TabIndex = 0;
@@ -189,35 +191,44 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBoxClientID);
             this.groupBox2.Controls.Add(this.textBoxTopicJsonDataset);
             this.groupBox2.Controls.Add(this.textBoxTopicStatus);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(12, 118);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Location = new System.Drawing.Point(12, 113);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(338, 79);
+            this.groupBox2.Size = new System.Drawing.Size(338, 120);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Настройки топика:";
             // 
+            // textBoxClientID
+            // 
+            this.textBoxClientID.Location = new System.Drawing.Point(113, 22);
+            this.textBoxClientID.Name = "textBoxClientID";
+            this.textBoxClientID.Size = new System.Drawing.Size(171, 23);
+            this.textBoxClientID.TabIndex = 5;
+            // 
             // textBoxTopicJsonDataset
             // 
-            this.textBoxTopicJsonDataset.Location = new System.Drawing.Point(111, 45);
+            this.textBoxTopicJsonDataset.Location = new System.Drawing.Point(113, 80);
             this.textBoxTopicJsonDataset.Name = "textBoxTopicJsonDataset";
             this.textBoxTopicJsonDataset.Size = new System.Drawing.Size(171, 23);
-            this.textBoxTopicJsonDataset.TabIndex = 1;
+            this.textBoxTopicJsonDataset.TabIndex = 7;
             // 
             // textBoxTopicStatus
             // 
-            this.textBoxTopicStatus.Location = new System.Drawing.Point(111, 16);
+            this.textBoxTopicStatus.Location = new System.Drawing.Point(113, 51);
             this.textBoxTopicStatus.Name = "textBoxTopicStatus";
             this.textBoxTopicStatus.Size = new System.Drawing.Size(171, 23);
-            this.textBoxTopicStatus.TabIndex = 1;
+            this.textBoxTopicStatus.TabIndex = 6;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 48);
+            this.label6.Location = new System.Drawing.Point(11, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 15);
             this.label6.TabIndex = 0;
@@ -226,11 +237,20 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 19);
+            this.label5.Location = new System.Drawing.Point(11, 54);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(81, 15);
             this.label5.TabIndex = 0;
             this.label5.Text = "Статус топик:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(11, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 15);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Клиент ID:";
             // 
             // checkBoxPcOnlineStatusEnable
             // 
@@ -238,7 +258,7 @@
             this.checkBoxPcOnlineStatusEnable.Location = new System.Drawing.Point(6, 22);
             this.checkBoxPcOnlineStatusEnable.Name = "checkBoxPcOnlineStatusEnable";
             this.checkBoxPcOnlineStatusEnable.Size = new System.Drawing.Size(123, 19);
-            this.checkBoxPcOnlineStatusEnable.TabIndex = 2;
+            this.checkBoxPcOnlineStatusEnable.TabIndex = 8;
             this.checkBoxPcOnlineStatusEnable.Text = "ПК онлайн статус";
             this.checkBoxPcOnlineStatusEnable.UseVisualStyleBackColor = true;
             // 
@@ -247,7 +267,7 @@
             this.groupBox3.Controls.Add(this.checkBoxCPUTempEnable);
             this.groupBox3.Controls.Add(this.checkBoxCPULoadEnable);
             this.groupBox3.Controls.Add(this.checkBoxPcOnlineStatusEnable);
-            this.groupBox3.Location = new System.Drawing.Point(12, 210);
+            this.groupBox3.Location = new System.Drawing.Point(12, 246);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(338, 75);
             this.groupBox3.TabIndex = 1;
@@ -260,7 +280,7 @@
             this.checkBoxCPUTempEnable.Location = new System.Drawing.Point(181, 50);
             this.checkBoxCPUTempEnable.Name = "checkBoxCPUTempEnable";
             this.checkBoxCPUTempEnable.Size = new System.Drawing.Size(118, 19);
-            this.checkBoxCPUTempEnable.TabIndex = 2;
+            this.checkBoxCPUTempEnable.TabIndex = 10;
             this.checkBoxCPUTempEnable.Text = "Температура ЦП";
             this.checkBoxCPUTempEnable.UseVisualStyleBackColor = true;
             // 
@@ -270,7 +290,7 @@
             this.checkBoxCPULoadEnable.Location = new System.Drawing.Point(181, 22);
             this.checkBoxCPULoadEnable.Name = "checkBoxCPULoadEnable";
             this.checkBoxCPULoadEnable.Size = new System.Drawing.Size(95, 19);
-            this.checkBoxCPULoadEnable.TabIndex = 2;
+            this.checkBoxCPULoadEnable.TabIndex = 9;
             this.checkBoxCPULoadEnable.Text = "Загрузка ЦП";
             this.checkBoxCPULoadEnable.UseVisualStyleBackColor = true;
             // 
@@ -278,7 +298,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 326);
+            this.ClientSize = new System.Drawing.Size(362, 372);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -331,5 +351,7 @@
         private TextBox textBoxTopicStatus;
         private Label label6;
         private Label label5;
+        private TextBox textBoxClientID;
+        private Label label7;
     }
 }

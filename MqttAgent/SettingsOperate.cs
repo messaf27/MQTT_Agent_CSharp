@@ -19,6 +19,7 @@ namespace MqttAgent
         public int servPort;
         public string servLogin;
         public string servPassword;
+        public string machineName;
         public string topicOnlineStatus;
         public string topicDataSet;
         public bool onlineStatusEnable;
@@ -33,6 +34,7 @@ namespace MqttAgent
         public int ServerPort { get; set; }
         public string? ServerLogin { get; set; }
         public string? ServerPassw { get; set; }
+        public string? MachineName { get; set; }
         public string? StatusTopic { get; set; }
         public string? DataTopic { get; set; }
         public bool OnlineStatusEnable { get; set; }
@@ -61,6 +63,7 @@ namespace MqttAgent
                 ServerPort = options.servPort,
                 ServerLogin = options.servLogin,
                 ServerPassw = options.servPassword,
+                MachineName = options.machineName,
                 StatusTopic = options.topicOnlineStatus,
                 DataTopic = options.topicDataSet,
                 OnlineStatusEnable = options.onlineStatusEnable,
@@ -118,6 +121,7 @@ namespace MqttAgent
                     options.servPort = settingsParametres.ServerPort;
                     options.servLogin = settingsParametres.ServerLogin;
                     options.servPassword = settingsParametres.ServerPassw;
+                    options.machineName = settingsParametres.MachineName;
                     options.topicOnlineStatus = settingsParametres.StatusTopic;
                     options.topicDataSet = settingsParametres.DataTopic;
                     options.onlineStatusEnable = (bool)settingsParametres.OnlineStatusEnable;
@@ -128,6 +132,7 @@ namespace MqttAgent
                     Debug.WriteLine($"ServerPort: {options.servPort}");
                     Debug.WriteLine($"ServerLogin: {options.servLogin}");
                     Debug.WriteLine($"ServerPassw: {options.servPassword}");
+                    Debug.WriteLine($"MachineName: {options.machineName}");
                     Debug.WriteLine($"onlineStatusEnable: {options.onlineStatusEnable}");
                     Debug.WriteLine($"topicDataSet: {options.topicDataSet}");
                     Debug.WriteLine($"onlineStatusEnable: {options.onlineStatusEnable}");
