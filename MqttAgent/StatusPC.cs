@@ -29,7 +29,8 @@ namespace MqttAgent
             //cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
             //ramCounter = new PerformanceCounter("Memory", "Available MBytes");
 
-            perfCpuCount = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+            //perfCpuCount = new PerformanceCounter("Processor Information", "% Processor Time", "_Total");
+            perfCpuCount = new PerformanceCounter("Processor", "% Processor Time", "_Total");
             perfMemCount = new PerformanceCounter("Memory", "Available Mbytes");
             perfUptimeCount = new PerformanceCounter("System", "System Up Time");
             //perfTempZone = new PerformanceCounter("Thermal Zone Information", "Temperature", @"\_TZ.TZ00");
