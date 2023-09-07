@@ -6,7 +6,21 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>FormMain.ico</ApplicationIcon>
+    <StartupObject>MqttAgent.Program</StartupObject>
+    <PackageIcon>crm.png</PackageIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="FormMain.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Icons\crm.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="M2MqttDotnetCore" Version="1.1.0" />
@@ -23,7 +37,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

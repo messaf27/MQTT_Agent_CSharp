@@ -7,6 +7,7 @@ namespace MqttAgent
 {
     public partial class FormSettings : Form
     {
+        const string iconTrayText = "MQTT Agent";
         SettingsOperate settingsOperate = new SettingsOperate();
         ApplicationOptions applicationOptions = new ApplicationOptions();
         Mqtt client = new Mqtt();
@@ -27,6 +28,17 @@ namespace MqttAgent
                 applicationOptions.servPassword,
                 applicationOptions.topicOnlineStatus
             );
+
+            if (client.IsConnected())
+            {
+                agentIconTray.Icon = MqttAgent.Properties.Resources.AgentOnline;
+                agentIconTray.Text = iconTrayText + " - Подключен";
+            }
+            else
+            {
+                agentIconTray.Icon = MqttAgent.Properties.Resources.AgentOffline;
+                agentIconTray.Text = iconTrayText + " - Отключен";
+            }
 
             Debug.WriteLine($"Mqtt connect result: {result}");
         }
@@ -92,6 +104,11 @@ namespace MqttAgent
             InitializeComponent();
             //this.Icon = Res
             Debug.WriteLine("Start MQTT Agent");
+
+            this.WindowState = FormWindowState.Minimized;
+            this.ShowInTaskbar = false;
+            agentIconTray.Visible = true;
+            agentIconTray.Text = iconTrayText + " - Отключен";
         }
 
         private void FormSettings_Deactivate(object sender, EventArgs e)
@@ -208,6 +225,18 @@ namespace MqttAgent
                 this.ShowInTaskbar = false;
                 agentIconTray.Visible = true;
             }
+        }
+
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show
+            (
+                "MQTT Agent 1.0 \n" +
+                "Автор: Егор Орленок \n" +
+                "E-mail: messaf@mail.ru \n" + 
+                "Все права защищены (c) 2023", "О программе",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
         }
     }
 }

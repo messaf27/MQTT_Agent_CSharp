@@ -91,6 +91,7 @@
             // 
             // SettingsToolStripMenuItem
             // 
+            this.SettingsToolStripMenuItem.Image = global::MqttAgent.Properties.Resources.menu_settings_64;
             this.SettingsToolStripMenuItem.Name = "SettingsToolStripMenuItem";
             this.SettingsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.SettingsToolStripMenuItem.Text = "Настройки";
@@ -98,6 +99,7 @@
             // 
             // ExitToolStripMenuItem
             // 
+            this.ExitToolStripMenuItem.Image = global::MqttAgent.Properties.Resources.menu_exit_64;
             this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
             this.ExitToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.ExitToolStripMenuItem.Text = "Выход";
@@ -105,9 +107,11 @@
             // 
             // AboutToolStripMenuItem
             // 
+            this.AboutToolStripMenuItem.Image = global::MqttAgent.Properties.Resources.menu_about_64;
             this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
             this.AboutToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.AboutToolStripMenuItem.Text = "О программе";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
