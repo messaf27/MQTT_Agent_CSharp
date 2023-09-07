@@ -34,11 +34,11 @@ namespace MqttAgent
                     client.Connect(clientUniqID,
                         login,
                         password,
-                        willRetain: false, // true 
+                        willRetain: true, 
                         willTopic: this.clientUniqID + "/" + this.willTopic,
                         willMessage: "offline",
-                        //willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
-                        willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
+                        willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+                        //willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
                         willFlag: true,
                         cleanSession: true,
                         keepAlivePeriod: 15);
@@ -72,10 +72,11 @@ namespace MqttAgent
                     this.client.Connect(clientUniqID,
                         login,
                         password,
-                        willRetain: false, // true 
+                        willRetain: true, 
                         willTopic: this.clientUniqID + "/" + this.willTopic,
                         willMessage: "offline",
-                        willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
+                        willQosLevel: MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE,
+                        //willQosLevel: MqttMsgBase.QOS_LEVEL_AT_MOST_ONCE,
                         willFlag: true,
                         cleanSession: true,
                         keepAlivePeriod: 15);
