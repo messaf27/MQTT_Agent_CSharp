@@ -25,11 +25,11 @@ namespace MqttAgent
 
             Debug.WriteLine($"Client topic: {this.clientUniqID + "/" + this.willTopic}");
 
-            this.client = new MqttClient(serv);
+            client = new MqttClient(serv);
 
             try
             {
-                if (!this.client.IsConnected)
+                if (!client.IsConnected)
                 {
                     client.Connect(clientUniqID,
                         login,
@@ -49,17 +49,15 @@ namespace MqttAgent
                 Debug.WriteLine($"Connection failure: {ex.Message}");
             }
 
+            if (client.IsConnected)
+                client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
 
-
-            if (this.client.IsConnected)
-                client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"));
-
-            return this.client.IsConnected;
+            return client.IsConnected;
         }
 
         public bool Connect(string clientName, string serv, int port, string login, string password, string willTopic)
         {
-            this.client = new MqttClient(serv);
+            client = new MqttClient(serv);
             this.clientUniqID = clientName;
             this.willTopic = willTopic;
 
@@ -67,9 +65,9 @@ namespace MqttAgent
 
             try
             {
-                if (!this.client.IsConnected)
-                {
-                    this.client.Connect(clientUniqID,
+                if (!client.IsConnected)
+                {   
+                    client.Connect(clientUniqID,
                         login,
                         password,
                         willRetain: true, 
@@ -87,8 +85,8 @@ namespace MqttAgent
                 Debug.WriteLine($"Connection failure: {ex.Message}");
             }
 
-            if (this.client.IsConnected)
-                this.client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"));
+            if (client.IsConnected)
+                client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("online"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
 
             return this.client.IsConnected;
         }
@@ -97,20 +95,20 @@ namespace MqttAgent
         {
             try 
             {
-                this.client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("offline"));
-                this.client.Disconnect();
+                client.Publish(this.clientUniqID + "/" + this.willTopic, Encoding.UTF8.GetBytes("offline"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+                client.Disconnect();
             }
             catch
             {
                 Debug.WriteLine("Disconnect failure");
             }
 
-            return this.client.IsConnected;
+            return client.IsConnected;
         }
 
         public bool IsConnected()
         {
-            return this.client.IsConnected;
+            return client.IsConnected;
         }
 
         public bool Publish(string topic, string message)
